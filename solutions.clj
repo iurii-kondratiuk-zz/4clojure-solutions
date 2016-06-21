@@ -70,7 +70,15 @@ true
 
 '(6 7)
 
-;; 19. Intro to Reduce
+;; 19. Last Element
+
+#(first (reverse %))
+
+;; 52. Intro to Destructuring
+
+[c e]
+
+;; 64. Intro to Reduce
 
 +
 
@@ -79,8 +87,15 @@ true
 
 (fn [k, m] (and (contains? m k) (= (m k) nil)))
 
+;; 156. Map Defaults
+
+(fn [v, m] (into {} (map #(hash-map % v) m)))
+
+;; 161. Subset and Superset
+
+#{1 2}
+
 ;; 162. Logical falsity and truth
 
 1
-
-;; 
+ 
