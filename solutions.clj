@@ -74,6 +74,44 @@ true
 
 #(first (reverse %))
 
+;; 20. Penultimate Element
+
+#(second (reverse %))
+
+;; 21. Nth Element
+
+(fn [l, i] (first (drop i l)))
+
+;; 22. Count a Sequence
+
+#(reduce (fn [acc, el] (inc acc)) 0 %)
+
+;; 23. Reverse a Sequence
+
+#(reduce (fn [acc, el] (conj acc el)) [] %)
+
+;; 24. Sum It All Up
+
+#(reduce (fn [acc, n] (+ acc n)) 0 %)
+
+;; 25. Find the odd numbers
+
+#(filter (fn [i] (= (mod i 2) 1)) %)
+
+;; 26. Fibonacci Sequence
+
+;; -- with reduce 
+(fn [n]
+  (let [r (range (- n 2))]
+    (reduce (fn [acc, i] (conj acc (apply + (drop i acc)))) [1 1] r)))
+
+;; -- with iterate
+#(take % (map first (iterate (fn [[a b]] [b (+ a b)]) [1 1])))
+
+;; 27. Palindrome Detector
+
+#(= (seq %) (reverse (seq %)))
+
 ;; 52. Intro to Destructuring
 
 [c e]
