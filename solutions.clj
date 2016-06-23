@@ -112,6 +112,22 @@ true
 
 #(= (seq %) (reverse (seq %)))
 
+;; 29. Get the Caps
+
+#(apply str (re-seq #"[A-Z]+" %))
+
+;; 32. Duplicate a Sequence
+
+(fn [sq] (mapcat #(list % %) sq))
+
+;; 38. Maximum value
+
+(fn [& params] (last (sort params)))
+
+;; 48. Intro to some
+
+6
+
 ;; 52. Intro to Destructuring
 
 [c e]
@@ -121,7 +137,6 @@ true
 +
 
 ;; 134. A nil key
-
 
 (fn [k, m] (and (contains? m k) (= (m k) nil)))
 
