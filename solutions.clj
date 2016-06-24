@@ -155,6 +155,4 @@ true
 ;; 162. Logical falsity and truth
 
 1
-
-(fn [l] (reduce (fn [acc, i] (if-not (= (last acc) i) (str acc i))) (first l) l))
  
