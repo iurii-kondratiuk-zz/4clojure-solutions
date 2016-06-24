@@ -116,6 +116,10 @@ true
 
 #(apply str (re-seq #"[A-Z]+" %))
 
+;; 30. Compress a Sequence
+
+#(map first (partition-by identity %))
+
 ;; 32. Duplicate a Sequence
 
 (fn [sq] (mapcat #(list % %) sq))
@@ -151,4 +155,6 @@ true
 ;; 162. Logical falsity and truth
 
 1
+
+(fn [l] (reduce (fn [acc, i] (if-not (= (last acc) i) (str acc i))) (first l) l))
  
