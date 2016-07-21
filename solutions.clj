@@ -112,7 +112,11 @@ true
 
 #(= (seq %) (reverse (seq %)))
 
-;; 29. Get the Caps
+;; 28. Flatten a Sequence
+
+#(filter (complement sequential?) (rest (tree-seq sequential? seq %)))
+
+;; 29. Get The Caps
 
 #(apply str (re-seq #"[A-Z]+" %))
 
